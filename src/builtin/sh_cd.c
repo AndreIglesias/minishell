@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 13:04:58 by jiglesia          #+#    #+#             */
-/*   Updated: 2021/07/20 20:29:31 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/24 13:36:40 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	sh_cd(int ac, char **av)
 	if (!chdir(tmp))
 	{
 		update_ev("OLDPWD", get_value(g_sh->ev, "PWD"));
-		update_ev("PWD", tmp);
+		update_ev("PWD", ft_strdup(getcwd(NULL, 0)));
 		g_sh->last_status = 0;
 		free(tmp);
 		return ;
